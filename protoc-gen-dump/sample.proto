@@ -1,6 +1,8 @@
 syntax = "proto3";
 package example.protobuf;
 
+option go_package = "protoc-gen-dump/go/protobuf";
+
 message SimpleMessage {
     uint64 id = 1;
     bytes blob = 4; 

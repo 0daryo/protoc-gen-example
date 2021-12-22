@@ -1,0 +1,18 @@
+syntax = "proto3";
+package example;
+option go_package = "protoc-gen-option/go/protobuf";
+
+import "google/protobuf/descriptor.proto";
+
+message MessageListOptions {
+    bool target = 10;
+    option (example.message_list) = {target: true};
+}
+
+// message NotTarget {
+//     bool hoge = 1;
+// }
+
+extend google.protobuf.MessageOptions {
+    MessageListOptions message_list = 50000;
+}
